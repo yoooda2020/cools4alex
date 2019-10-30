@@ -14,7 +14,7 @@ namespace cools4alex
     static class G
     {
         public static SpriteBatch sb;
-        public static KeyboarddState ks;
+        public static KeyboardState ks;
 
         public static void init(GraphicsDevice gd)
         {
