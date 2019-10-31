@@ -29,20 +29,20 @@ namespace cools4alex
         {
             if (G.ks.IsKeyDown(Keys.Right ))
             {
-                rotation += 0.05f;
+                Rotation += 0.05f;
             }
             if (G.ks.IsKeyDown(Keys.Left ))
             {
-                rotation -= 0.05f;
+                Rotation -= 0.05f;
             }
             if (G.ks.IsKeyDown(Keys.Up ))
             {
-                position += 10 * Vector2.Transform(Vector2.UnitX, Matrix.CreateRotationZ(rotation));
+                Position += 10 * Vector2.Transform(Vector2.UnitX, Matrix.CreateRotationZ(Rotation));
                 
             }
             if (G.ks.IsKeyDown(Keys.Down ))
             {
-                position -= 10*Vector2.Transform(Vector2.UnitX, Matrix.CreateRotationZ(rotation));
+                Position -= 10*Vector2.Transform(Vector2.UnitX, Matrix.CreateRotationZ(Rotation));
 
             }
         }

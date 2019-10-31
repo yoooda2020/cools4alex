@@ -88,7 +88,13 @@ namespace cools4alex
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            G.sb.Begin();
+            G.sb.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend,
+                null,null,null,null,
+                Matrix.CreateTranslation(-car.Position.X,-car.Position.Y,0)*
+
+                Matrix.CreateScale(1)*
+                Matrix.CreateRotationZ(0)*
+                Matrix.CreateTranslation(600,350,0));
             Event_Draw?.Invoke();
             G.sb.End();
 

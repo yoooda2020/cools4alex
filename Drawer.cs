@@ -12,10 +12,10 @@ namespace cools4alex
     {
         #region data
         Texture2D texture;
-        protected Vector2 position;
+        public Vector2 Position { get; set;}
         Rectangle? sourceRectangle;
         Color color;
-        protected float rotation;
+        protected float Rotation;
         Vector2 origin;
         Vector2 scale;
         SpriteEffects effects;
@@ -32,10 +32,10 @@ namespace cools4alex
            SpriteEffects effects, float layerDepth)
         {
             this.texture = texture;
-            this.position = position;
+            this.Position = position;
             this.sourceRectangle = sourceRectangle;
             this.color = color;
-            this.rotation = rotation;
+            this.Rotation = rotation;
             this.origin = origin;
             this.scale = scale;
             this.effects = effects;
@@ -49,8 +49,8 @@ namespace cools4alex
         #region funcs
          void draw()
         {
-            G.sb.Draw(texture, position, sourceRectangle,
-                      color, rotation, origin, scale,
+            G.sb.Draw(texture, Position, sourceRectangle,
+                      color, Rotation, origin, scale,
                       effects, layerDepth);
         }
         #endregion
