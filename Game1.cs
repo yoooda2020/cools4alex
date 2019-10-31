@@ -8,7 +8,7 @@ namespace cools4alex
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
-        Drawer   car,bar;
+        Drawer   car,bar,track;
         public static event DlgDraw Event_Draw;
         public static event DlgUpdate Event_Update;
 
@@ -37,7 +37,12 @@ namespace cools4alex
             // Create a new SpriteBatch, which can be used to draw textures.
 
             G.init(GraphicsDevice);
-            car=new MovingObj (Content.Load<Texture2D>("car"),
+            track = new Drawer(Content.Load<Texture2D>("track"),
+                       new Vector2(0,0),
+                       null, Color.White, 0, new Vector2(0),
+                       new Vector2(2), SpriteEffects.None, 0);
+
+            car =new MovingObj (Content.Load<Texture2D>("car"),
                        new Vector2(300,200),
                        null,Color.White,0,new Vector2(87,65),
                        new Vector2(0.7f),SpriteEffects.FlipHorizontally,0);
@@ -46,11 +51,8 @@ namespace cools4alex
                        new Vector2(200, 300),
                        null, Color.Yellow , 0, new Vector2(0),
                        new Vector2(0.5f), SpriteEffects.None , 0);
-
-            new Drawer(Content.Load<Texture2D>("car"),
-                       new Vector2(205, 350),
-                       null, Color.Yellow, 0, new Vector2(0),
-                       new Vector2(0.5f), SpriteEffects.None, 0);
+            
+           
 
             new Drawer(Content.Load<Texture2D>("car"),
                        new Vector2(220, 400),
